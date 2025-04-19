@@ -1,0 +1,237 @@
+/* Dashboard Specific Styles */
+:root {
+    --dark: #343a40;
+    --light: #f8f9fa;
+    --gray: #e9ecef;
+    --gray-dark: #ced4da;
+    --primary: #007bff;
+    --secondary: #ffc107;
+    --radius: 0.5rem;
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+.dashboard-sidebar {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 2rem 0;
+    transition: var(--transition);
+}
+
+.dashboard-menu {
+    margin-top: 2rem;
+}
+
+.dashboard-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-menu a {
+    color: var(--light);
+    display: block;
+    padding: 0.8rem 1.5rem;
+    transition: var(--transition);
+}
+
+.dashboard-menu a:hover,
+.dashboard-menu a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary);
+}
+
+.dashboard-main {
+    padding: 2rem;
+    background-color: var(--gray);
+    position: relative;
+}
+
+.dashboard-tab {
+    display: none;
+}
+
+.dashboard-tab.active {
+    display: block;
+}
+
+.dashboard-card {
+    background-color: var(--light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.dashboard-table th {
+    background-color: var(--gray);
+    font-weight: 600;
+}
+
+.dashboard-table tbody tr:hover {
+    background-color: var(--gray);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ef6c00;
+}
+
+.status-badge.approved {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #2e7d32;
+}
+
+.status-badge.rejected {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #c62828;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.loading-indicator {
+    padding: 1rem;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.toggle-sidebar {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width: 992px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        z-index: 1000;
+        transition: var(--transition);
+    }
+
+    .dashboard-sidebar.active {
+        left: 0;
+    }
+
+    .toggle-sidebar {
+        display: block;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}

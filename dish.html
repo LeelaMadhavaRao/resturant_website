@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dish Details - La Bella Vita</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="/images/logo.png" alt="La Bella Vita">
+        La Bella Vita
+      </a>
+      <nav>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="menu.html">Menu</a></li>
+          <li class="nav-item"><a href="reservation.html">Reservations</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="signin.html" id="auth-link">Sign In</a></li>
+          <li class="nav-item">
+            <a href="#" id="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dish Detail Section -->
+  <section class="dish-detail-section">
+    <div class="container">
+      <div class="dish-detail">
+        <div class="dish-image">
+          <img id="dish-image" src="/placeholder.svg?height=400&width=400" alt="Dish Image">
+        </div>
+        <div class="dish-info">
+          <h1 id="dish-name">Dish Name</h1>
+          <div class="dish-meta">
+            <div class="dish-price" id="dish-price">$0.00</div>
+            <div class="dish-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(4.5)</span>
+            </div>
+          </div>
+          <p class="dish-description" id="dish-description">Loading dish description...</p>
+          
+          <form id="preorder-form" class="customization-form">
+            <h3>Customize Your Order</h3>
+            
+            <div class="quantity-control">
+              <label class="form-label">Quantity:</label>
+              <div class="quantity-buttons">
+                <span class="quantity-btn" id="decrease-quantity">-</span>
+                <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+                <span class="quantity-btn" id="increase-quantity">+</span>
+              </div>
+            </div>
+            
+            <div class="spice-level">
+              <label class="form-label">Spice Level:</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="spice-level" value="mild" checked>
+                  Mild
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="spice-level" value="medium">
+                  Medium
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="spice-level" value="hot">
+                  Hot
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="special-instructions">Special Instructions:</label>
+              <textarea id="special-instructions" class="form-control" rows="3" placeholder="Any special requests or dietary restrictions?"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-lg">Pre-Order Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Dishes Section -->
+  <section class="related-dishes bg-gray">
+    <div class="container">
+      <div class="section-heading">
+        <h2>You May Also Like</h2>
+      </div>
+      <div class="menu-grid" id="related-dishes">
+        <!-- Related dishes will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">La Bella Vita</div>
+          <p>Experience the authentic taste of Italy in every bite with our traditional recipes and fresh ingredients.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a>
+          <a href="reservation.html"><i class="fas fa-chevron-right"></i> Reservations</a>
+          <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Contact Us</h3>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 123 Main Street, New York, NY 10001</a>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a>
+          <a href="mailto:info@labellavita.com"><i class="fas fa-envelope"></i> info@labellavita.com</a>
+          <p><i class="fas fa-clock"></i> Mon-Sun: 11:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 La Bella Vita. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div class="cart-items">
+      <!-- Cart items will be loaded dynamically with JavaScript -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="payment-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Payment</h2>
+      <form id="payment-form">
+        <div class="form-group">
+          <label class="form-label">Select Payment Method</label>
+          <div class="payment-options">
+            <div class="payment-option selected" data-method="card">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="far fa-credit-card"></i></span>
+                <span>Credit/Debit Card</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="upi">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-mobile-alt"></i></span>
+                <span>UPI</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="netbanking">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-university"></i></span>
+                <span>Net Banking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group" id="card-payment-fields">
+          <label class="form-label" for="card-number">Card Number</label>
+          <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" required>
+          
+          <div class="form-group">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div>
+                <label class="form-label" for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+              </div>
+              <div>
+                <label class="form-label" for="cvv">CVV</label>
+                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+              </div>
+            </div>
+          </div>
+          
+          <label class="form-label" for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" class="form-control" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group" id="upi-payment-fields" style="display: none;">
+          <label class="form-label" for="upi-id">UPI ID</label>
+          <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi" required>
+        </div>
+        
+        <div class="form-group" id="netbanking-payment-fields" style="display: none;">
+          <label class="form-label" for="bank-select">Select Bank</label>
+          <select class="form-control" id="bank-select" required>
+            <option value="">Select your bank</option>
+            <option value="hdfc">HDFC Bank</option>
+            <option value="sbi">State Bank of India</option>
+            <option value="icici">ICICI Bank</option>
+            <option value="axis">Axis Bank</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn">Pay Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Alert Container -->
+  <div id="alert-container"></div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get dish ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const dishId = parseInt(urlParams.get('id'));
+      
+      if (dishId) {
+        const menuItems = JSON.parse(localStorage.getItem('menuItems')) || [];
+        const dish = menuItems.find(item => item.id === dishId);
+        
+        if (dish) {
+          // Populate dish details
+          document.getElementById('dish-name').textContent = dish.name;
+          document.getElementById('dish-price').textContent = `$${dish.price.toFixed(2)}`;
+          document.getElementById('dish-description').textContent = dish.description;
+          document.getElementById('dish-image').src = dish.image;
+          document.getElementById('dish-image').alt = dish.name;
+          document.title = `${dish.name} - La Bella Vita`;
+          
+          // Load related dishes (same category)
+          loadRelatedDishes(dish.category, dish.id);
+        } else {
+          // Dish not found
+          document.querySelector('.dish-detail').innerHTML = '<div class="alert alert-danger">Dish not found!</div>';
+        }
+      }
+      
+      // Quantity control
+      const decreaseBtn = document.getElementById('decrease-quantity');
+      const increaseBtn = document.getElementById('increase-quantity');
+      const quantityInput = document.getElementById('quantity');
+      
+      if (decreaseBtn && increaseBtn && quantityInput) {
+        decreaseBtn.addEventListener('click', () => {
+          if (parseInt(quantityInput.value) > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+          }
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+          if (parseInt(quantityInput.value) < 10) {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+          }
+        });
+      }
+    });
+    
+    function loadRelatedDishes(category, currentDishId) {
+      const relatedDishes = document.getElementById('related-dishes');
+      const menuItems = JSON.parse(localStorage.getItem('menuItems')) || [];
+      
+      // Filter dishes in the same category, excluding current dish
+      const filteredItems = menuItems.filter(item => item.category === category && item.id !== currentDishId);
+      
+      // Limit to 3 items
+      const limitedItems = filteredItems.slice(0, 3);
+      
+      if (limitedItems.length > 0) {
+        let dishesHtml = '';
+        limitedItems.forEach(item => {
+          dishesHtml += `
+            <div class="menu-card">
+              <div class="menu-image">
+                <img src="${item.image}" alt="${item.name}">
+              </div>
+              <div class="menu-content">
+                <div class="menu-title">
+                  <h3>${item.name}</h3>
+                  <span class="menu-price">$${item.price.toFixed(2)}</span>
+                </div>
+                <p class="menu-description">${item.description}</p>
+                <div class="menu-actions">
+                  <a href="dish.html?id=${item.id}" class="btn btn-sm">View Details</a>
+                  <button class="btn btn-sm btn-outline add-to-cart" data-id="${item.id}">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        relatedDishes.innerHTML = dishesHtml;
+        
+        // Add event listeners for "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            addToCart(id, 1);
+          });
+        });
+      } else {
+        relatedDishes.innerHTML = '<p class="text-center">No related dishes available.</p>';
+      }
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

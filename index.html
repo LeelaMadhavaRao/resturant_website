@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Bella Vita - Authentic Italian Cuisine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="public/images/logo.jpg" alt="La Bella Vita">
+        La Bella Vita
+      </a>
+      <nav>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="menu.html">Menu</a></li>
+          <li class="nav-item"><a href="reservation.html">Reservations</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="signin.html" id="auth-link">Sign In</a></li>
+          <li class="nav-item">
+            <a href="#" id="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Experience Authentic Italian Cuisine</h1>
+        <p>Indulge in the flavors of Italy with our handcrafted dishes made from traditional recipes and the freshest ingredients.</p>
+        <a href="menu.html" class="btn btn-lg">View Our Menu</a>
+        <a href="reservation.html" class="btn btn-outline btn-lg" id="reserve-btn">Reserve a Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Menu Section -->
+  <section class="featured">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our Signature Dishes</h2>
+      </div>
+      <div class="menu-grid" id="featured-menu">
+        <!-- Menu items will be loaded dynamically with JavaScript -->
+      </div>
+      <div class="text-center mt-5">
+        <a href="menu.html" class="btn">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about bg-gray">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="/images/about-img.jpg" alt="About La Bella Vita">
+        </div>
+        <div class="about-content">
+          <h2>Our Story</h2>
+          <p>La Bella Vita was founded in 2005 by Chef Marco Rossi with a simple mission: to share the authentic flavors of Italy with our community.</p>
+          <p>We take pride in using only the freshest ingredients, many imported directly from Italy, to create dishes that transport you to the charming streets of Rome, Florence, and Naples.</p>
+          <p>Our team of skilled chefs combines traditional recipes with modern techniques to deliver an unforgettable dining experience for our guests.</p>
+          <div class="chef-signature">Marco Rossi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-heading">
+        <h2>What Our Customers Say</h2>
+      </div>
+      <div class="testimonial-container">
+        <div class="testimonial-slide active">
+          <p class="testimonial-text">"The best Italian food I've had outside of Italy! Every dish is crafted with care and the flavors are simply outstanding."</p>
+          <p class="testimonial-author">- Sophia Martinez</p>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">"The atmosphere is cozy and authentic, the service is impeccable, and the food is to die for. La Bella Vita never disappoints!"</p>
+          <p class="testimonial-author">- James Thompson</p>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">"From the moment you walk in, you're treated like family. Their homemade pasta dishes are absolutely phenomenal."</p>
+          <p class="testimonial-author">- Emily Johnson</p>
+        </div>
+        <div class="testimonial-controls">
+          <span class="testimonial-dot active" data-slide="0"></span>
+          <span class="testimonial-dot" data-slide="1"></span>
+          <span class="testimonial-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta bg-primary">
+    <div class="container text-center">
+      <h2 class="mb-3" style="color: var(--light);">Ready to Experience La Bella Vita?</h2>
+      <p class="mb-4" style="color: var(--light);">Join us for an unforgettable dining experience. Reserve your table today or order online for pickup or delivery.</p>
+      <div class="cta-buttons">
+        <a href="reservation.html" class="btn btn-secondary">Reserve a Table</a>
+        <a href="menu.html" class="btn btn-outline" style="color: var(--light); border-color: var(--light);">Order Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">La Bella Vita</div>
+          <p>Experience the authentic taste of Italy in every bite with our traditional recipes and fresh ingredients.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a>
+          <a href="reservation.html"><i class="fas fa-chevron-right"></i> Reservations</a>
+          <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Contact Us</h3>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 123 Main Street, New York, NY 10001</a>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a>
+          <a href="mailto:info@labellavita.com"><i class="fas fa-envelope"></i> info@labellavita.com</a>
+          <p><i class="fas fa-clock"></i> Mon-Sun: 11:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 La Bella Vita. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div class="cart-items">
+      <!-- Cart items will be loaded dynamically with JavaScript -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="payment-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Payment</h2>
+      <form id="payment-form">
+        <div class="form-group">
+          <label class="form-label">Select Payment Method</label>
+          <div class="payment-options">
+            <div class="payment-option selected" data-method="card">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="far fa-credit-card"></i></span>
+                <span>Credit/Debit Card</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="upi">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-mobile-alt"></i></span>
+                <span>UPI</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="netbanking">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-university"></i></span>
+                <span>Net Banking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group" id="card-payment-fields">
+          <label class="form-label" for="card-number">Card Number</label>
+          <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" required>
+          
+          <div class="form-group">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div>
+                <label class="form-label" for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+              </div>
+              <div>
+                <label class="form-label" for="cvv">CVV</label>
+                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+              </div>
+            </div>
+          </div>
+          
+          <label class="form-label" for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" class="form-control" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group" id="upi-payment-fields" style="display: none;">
+          <label class="form-label" for="upi-id">UPI ID</label>
+          <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi" required>
+        </div>
+        
+        <div class="form-group" id="netbanking-payment-fields" style="display: none;">
+          <label class="form-label" for="bank-select">Select Bank</label>
+          <select class="form-control" id="bank-select" required>
+            <option value="">Select your bank</option>
+            <option value="hdfc">HDFC Bank</option>
+            <option value="sbi">State Bank of India</option>
+            <option value="icici">ICICI Bank</option>
+            <option value="axis">Axis Bank</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn">Pay Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div class="modal" id="order-details-modal">
+    <div class="modal-content">
+      <!-- Order details will be loaded dynamically with JavaScript -->
+    </div>
+  </div>
+
+  <!-- Alert Container -->
+  <div id="alert-container"></div>
+  
+  <script>
+    // Initialize featured menu items
+    document.addEventListener('DOMContentLoaded', () => {
+      const featuredMenu = document.getElementById('featured-menu');
+      if (featuredMenu) {
+        const menuItems = JSON.parse(localStorage.getItem('menuItems')) || [];
+        const featuredItems = menuItems.filter(item => item.featured);
+        
+        if (featuredItems.length > 0) {
+          let menuHtml = '';
+          featuredItems.forEach(item => {
+            menuHtml += `
+              <div class="menu-card">
+                <div class="menu-image">
+                  <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="menu-content">
+                  <div class="menu-title">
+                    <h3>${item.name}</h3>
+                    <span class="menu-price">$${item.price.toFixed(2)}</span>
+                  </div>
+                  <p class="menu-description">${item.description}</p>
+                  <div class="menu-actions">
+                    <a href="dish.html?id=${item.id}" class="btn btn-sm">View Details</a>
+                    <button class="btn btn-sm btn-outline add-to-cart" data-id="${item.id}">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          
+          featuredMenu.innerHTML = menuHtml;
+          
+          // Add event listeners for "Add to Cart" buttons
+          document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              const id = parseInt(e.target.dataset.id);
+              const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+              addToCart(id, 1);
+            });
+          });
+        } else {
+          featuredMenu.innerHTML = '<p class="text-center">No featured items available.</p>';
+        }
+      }
+      
+      // Testimonial slider
+      const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+      
+      if (testimonialSlides.length > 0 && testimonialDots.length > 0) {
+        testimonialDots.forEach(dot => {
+          dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.dataset.slide);
+            
+            // Hide all slides
+            testimonialSlides.forEach(slide => {
+              slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            testimonialDots.forEach(dot => {
+              dot.classList.remove('active');
+            });
+            
+            // Show selected slide and activate dot
+            testimonialSlides[slideIndex].classList.add('active');
+            dot.classList.add('active');
+          });
+        });
+        
+        // Auto-rotate testimonials every 5 seconds
+        let currentSlide = 0;
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % testimonialSlides.length;
+          
+          // Hide all slides
+          testimonialSlides.forEach(slide => {
+            slide.classList.remove('active');
+          });
+          
+          // Remove active class from all dots
+          testimonialDots.forEach(dot => {
+            dot.classList.remove('active');
+          });
+          
+          // Show current slide and activate dot
+          testimonialSlides[currentSlide].classList.add('active');
+          testimonialDots[currentSlide].classList.add('active');
+        }, 5000);
+      }
+      
+      // Payment options
+      const paymentOptions = document.querySelectorAll('.payment-option');
+      if (paymentOptions.length > 0) {
+        paymentOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            // Remove selected class from all options
+            paymentOptions.forEach(opt => {
+              opt.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked option
+            option.classList.add('selected');
+            
+            // Show/hide corresponding payment fields
+            const method = option.dataset.method;
+            
+            document.getElementById('card-payment-fields').style.display = method === 'card' ? 'block' : 'none';
+            document.getElementById('upi-payment-fields').style.display = method === 'upi' ? 'block' : 'none';
+            document.getElementById('netbanking-payment-fields').style.display = method === 'netbanking' ? 'block' : 'none';
+          });
+        });
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

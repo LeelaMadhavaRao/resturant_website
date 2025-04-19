@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations - La Bella Vita</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="/images/logo.png" alt="La Bella Vita">
+        La Bella Vita
+      </a>
+      <nav>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="menu.html">Menu</a></li>
+          <li class="nav-item"><a href="reservation.html">Reservations</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="signin.html" id="auth-link">Sign In</a></li>
+          <li class="nav-item">
+            <a href="#" id="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reservation Section -->
+  <section class="reservation">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Book Your Table</h2>
+      </div>
+      <div class="reservation-container">
+        <div class="reservation-image">
+          <img src="/images/about-img.jpg" alt="Reservation">
+        </div>
+        <div class="reservation-form">
+          <form id="reservation-form">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone</label>
+              <input type="tel" id="phone" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="date">Date</label>
+              <input type="date" id="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="time">Time</label>
+              <select id="time" class="form-control" required>
+                <option value="">Select Time</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="13:30">1:30 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+                <option value="21:00">9:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guests">Number of Guests</label>
+              <select id="guests" class="form-control" required>
+                <option value="">Select Guests</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4 People</option>
+                <option value="5">5 People</option>
+                <option value="6">6 People</option>
+                <option value="7">7 People</option>
+                <option value="8">8 People</option>
+                <option value="9">9 People</option>
+                <option value="10">10 People</option>
+                <option value="more">More than 10 (Specify in Notes)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="notes">Special Requests</label>
+              <textarea id="notes" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="checkbox-group">
+                <input type="checkbox" id="pay-now" checked>
+                <label for="pay-now">Pay now to secure your reservation</label>
+              </div>
+              <p class="form-text mt-1" style="font-size: 0.85rem; color: #666;">
+                A small fee will be charged to guarantee your table. This amount will be deducted from your final bill.
+              </p>
+            </div>
+            <button type="submit" class="btn btn-lg">Reserve Table</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Policies -->
+  <section class="bg-gray">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Reservation Policies</h2>
+      </div>
+      <div class="policy-cards">
+        <div class="policy-card">
+          <i class="fas fa-clock"></i>
+          <h3>Late Arrival</h3>
+          <p>We hold reservations for 15 minutes past the scheduled time. After that, tables may be released for walk-in guests.</p>
+        </div>
+        <div class="policy-card">
+          <i class="fas fa-ban"></i>
+          <h3>Cancellation</h3>
+          <p>Cancellations must be made at least 24 hours in advance for a full refund of the reservation fee.</p>
+        </div>
+        <div class="policy-card">
+          <i class="fas fa-users"></i>
+          <h3>Group Size</h3>
+          <p>For parties larger than 10, please contact us directly at (123) 456-7890 for special arrangements.</p>
+        </div>
+        <div class="policy-card">
+          <i class="fas fa-credit-card"></i>
+          <h3>Payment</h3>
+          <p>The reservation fee is $10 per person and will be applied as credit to your final bill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">La Bella Vita</div>
+          <p>Experience the authentic taste of Italy in every bite with our traditional recipes and fresh ingredients.</p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+          <a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a>
+          <a href="reservation.html"><i class="fas fa-chevron-right"></i> Reservations</a>
+          <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-heading">Contact Us</h3>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> 123 Main Street, New York, NY 10001</a>
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a>
+          <a href="mailto:info@labellavita.com"><i class="fas fa-envelope"></i> info@labellavita.com</a>
+          <p><i class="fas fa-clock"></i> Mon-Sun: 11:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 La Bella Vita. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <span class="cart-close">&times;</span>
+    </div>
+    <div class="cart-items">
+      <!-- Cart items will be loaded dynamically with JavaScript -->
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="payment-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Payment</h2>
+      <form id="payment-form">
+        <div class="form-group">
+          <label class="form-label">Select Payment Method</label>
+          <div class="payment-options">
+            <div class="payment-option selected" data-method="card">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="far fa-credit-card"></i></span>
+                <span>Credit/Debit Card</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="upi">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-mobile-alt"></i></span>
+                <span>UPI</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="netbanking">
+              <div class="payment-header">
+                <span class="payment-icon"><i class="fas fa-university"></i></span>
+                <span>Net Banking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group" id="card-payment-fields">
+          <label class="form-label" for="card-number">Card Number</label>
+          <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456" required>
+          
+          <div class="form-group">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div>
+                <label class="form-label" for="expiry">Expiry Date</label>
+                <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required>
+              </div>
+              <div>
+                <label class="form-label" for="cvv">CVV</label>
+                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+              </div>
+            </div>
+          </div>
+          
+          <label class="form-label" for="card-name">Cardholder Name</label>
+          <input type="text" id="card-name" class="form-control" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group" id="upi-payment-fields" style="display: none;">
+          <label class="form-label" for="upi-id">UPI ID</label>
+          <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi" required>
+        </div>
+        
+        <div class="form-group" id="netbanking-payment-fields" style="display: none;">
+          <label class="form-label" for="bank-select">Select Bank</label>
+          <select class="form-control" id="bank-select" required>
+            <option value="">Select your bank</option>
+            <option value="hdfc">HDFC Bank</option>
+            <option value="sbi">State Bank of India</option>
+            <option value="icici">ICICI Bank</option>
+            <option value="axis">Axis Bank</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn">Pay Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Alert Container -->
+  <div id="alert-container"></div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

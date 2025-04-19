@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - La Bella Vita</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="dashboard-sidebar">
+            <div class="p-3">
+                <a href="index.html" class="logo" style="color: var(--light);">
+                    <img src="/images/logo.png" alt="La Bella Vita" style="height: 30px;">
+                    La Bella Vita
+                </a>
+            </div>
+            <ul class="dashboard-menu">
+                <li><a href="#" class="active" data-tab="overview">Dashboard Overview</a></li>
+                <li><a href="#" data-tab="menu-items">Menu Management</a></li>
+                <li><a href="#" data-tab="reservations">Reservations</a></li>
+                <li><a href="#" data-tab="orders">Orders</a></li>
+                <li><a href="#" id="admin-logout">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="dashboard-main">
+            <button class="toggle-sidebar"><i class="fas fa-bars"></i></button>
+            <div id="loading" class="loading-indicator">Loading...</div>
+
+            <!-- Overview Tab -->
+            <div class="dashboard-tab active" id="overview">
+                <h1>Dashboard Overview</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="orders-count">0</div>
+                        <div class="stat-label">Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="reservations-count">0</div>
+                        <div class="stat-label">Reservations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="menu-items-count">0</div>
+                        <div class="stat-label">Menu Items</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="users-count">0</div>
+                        <div class="stat-label">Users</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Recent Orders</h2>
+                    <div class="table-container">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-orders"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Recent Reservations</h2>
+                    <div class="table-container">
+                        <table class="dashboard-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Guests</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-reservations"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Items Tab -->
+            <div class="dashboard-tab" id="menu-items">
+                <h1>Menu Management</h1>
+                <div class="dashboard-card">
+                    <h2>Add New Menu Item</h2>
+                    <form id="add-menu-item-form">
+                        <div class="form-group">
+                            <label class="form-label" for="menu-item-name">Name</label>
+                            <input type="text" id="menu-item-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="menu-item-category">Category</label>
+                            <select id="menu-item-category" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="pizza">Pizza</option>
+                                <option value="pasta">Pasta</option>
+                                <option value="risotto">Risotto</option>
+                                <option value="dessert">Dessert</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="menu-item-price">Price ($)</label>
+                            <input type="number" id="menu-item-price" class="form-control" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="menu-item-description">Description</label>
+                            <textarea id="menu-item-description" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="menu-item-featured">
+                                <label for="menu-item-featured">Featured Item</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Add Menu Item</button>
+                    </form>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Menu Items</h2>
+                    <div class="table-container">
+                        <table class="dashboard-table" id="menu-items-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservations Tab -->
+            <div class="dashboard-tab" id="reservations">
+                <h1>Reservations Management</h1>
+                <div class="dashboard-card">
+                    <h2>All Reservations</h2>
+                    <div class="table-container">
+                        <table class="dashboard-table" id="reservations-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Guests</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="dashboard-tab" id="orders">
+                <h1>Orders Management</h1>
+                <div class="dashboard-card">
+                    <h2>All Orders</h2>
+                    <div class="table-container">
+                        <table class="dashboard-table" id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Menu Item Modal -->
+    <div class="modal" id="edit-menu-item-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Edit Menu Item</h2>
+            <form id="edit-menu-item-form">
+                <input type="hidden" id="edit-menu-item-id">
+                <div class="form-group">
+                    <label class="form-label" for="edit-menu-item-name">Name</label>
+                    <input type="text" id="edit-menu-item-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="edit-menu-item-category">Category</label>
+                    <select id="edit-menu-item-category" class="form-control" required>
+                        <option value="">Select Category</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="pasta">Pasta</option>
+                        <option value="risotto">Risotto</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="edit-menu-item-price">Price ($)</label>
+                    <input type="number" id="edit-menu-item-price" class="form-control" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="edit-menu-item-description">Description</label>
+                    <textarea id="edit-menu-item-description" class="form-control" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="edit-menu-item-featured">
+                        <label for="edit-menu-item-featured">Featured Item</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Update Menu Item</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="order-details-modal">
+        <div class="modal-content">
+            <!-- Order details will be loaded dynamically -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
